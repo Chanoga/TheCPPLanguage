@@ -30,8 +30,12 @@
     s will have the value "helloplease".String values do not support subtraction,division,
     multiplication nor modulus.The same applies to the characters.
 
-    C++ Supports the following types:
+    C++ Fundamental types:
     ----------------------------------
+    C++ has a set of fundamental types corresponding to the most common basic
+    storage units of a computer and the most common ways of using them to hold data.
+
+    ->Boolean(bool)
     ->Integer (int)
     ->long integer(long or long int all the same)
     ->long long integer(long long or long long int)
@@ -42,11 +46,78 @@
     ->unsigned short Integer(unsigned short)
     ->floating point (float)
     ->large floating point value (double)
+    ->More larger floating point value(long double)
     ->character(char)
     ->text(string)
     ->wide character(wchar_t)
+    ->void
 
-    The size of these types is machinde dependent,example integer on the 32bit machine may have size of 2byte and on the 64bit machine the size of 4byte.
+    Note:
+    ------
+    All types are signed by default unless unsigned keyword is used,Signed means
+    a type can hold both positive as well as negative values(numbers).
+    
+    From the fundamental types we can construct another types such as:
+
+    ->Pointers (e.g int*,double*,float*,short*,char*) see getting along with pointer for
+    more details on pointers.
+    ->Arrays (e.g char[],int[],double[],float[],short[]) see getting along with arrays for
+    more details on arrays.
+
+    Integral,Arithmetic and User defined Types:
+    ------------------------------------------
+    Boolean types,integer types and character types are collectively called Integral types.
+    when Integral types are combined with Floating point types collectively are called
+    Arithmentic types.
+
+    The user define types are:
+    --------------------------
+    ->Classes (see getting along with Object Oriented).
+    ->Enumerations (see getting along with Enumerations).
+
+    These types are called user defined because they must be defined by the user/programmer
+    and they are not comming directly with the language.
+
+    The Integral and floating-point types are provided in a variety of sizes to give the 
+    programmer a choice of the amount of storage consumed.
+
+    Note:
+    --------
+    Even though C++ offers such a wide range of types,for most applications we could use
+    bool for logical values (see getting along with logics),char for character values,
+    int for integer values and double for floating-point values.
+    The remaining fundamental types are variations for optimizations,special needs and
+    compatibility that are best ignored until such needs arise.
+
+    Let's See each of the above fundamental types:
+    ---------------------------------------------
+
+    ->Boolean (bool):
+    ----------------
+    A boolean(bool) type can have one of the two values true(1) or false(0),
+    a boolean is used to express the result o logical operations.
+
+    Example:
+    int number = 100;
+    int n = 200;
+    bool b = (number == n);
+    if n and number are equal then the value hold by b will be true other wise false.
+    By definition true has value of one(1) and false a value of zero(0) when converted to
+    an integer,conversely integers can be implicitly converted to bool values. All nonzero integers converts to true and all zero integers converts to false.
+
+    example:
+    bool b2 = 100; here b2 becomes true
+    bool b1 = 0; here b1 becomes false
+
+    if you don't want to explicitly convert integer to boolean use {} initializer
+
+    example: bool l{7}; error: narrowing conversion of '7' from 'int' to 'bool' [-Wnarrowing]
+
+    A pointer also can be converted to boolean value,a non-null pointer converts to true
+    while null pointer converts to false.
+
+    Characters:
+    -----------
 
     Type Identifier:
     ---------------
@@ -75,3 +146,12 @@
     {} or assignment operator(=) to initialize a variable more on that on operator
     section later.
 */
+#include<iostream>
+#include<climits>
+using namespace std;
+int main(void){
+
+    bool b{2};
+    cout<<"Boolean: "<<b<<endl<<endl;
+    return 0;
+}
