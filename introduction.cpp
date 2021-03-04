@@ -63,5 +63,10 @@
     string s = "hello";
     string ss{"please"};
 
-    from the above example, number is declared of type integer but it hasn't given any value so it's value is undefined, f is declared of type float and has initialized with value of 100.4784 so whenever you call f it will yield a value of 100.4784,d is declared of type double and initialized with a value of 3983.4784 and so on.C++ uses {} or assignment operator(=) to initialize a variable more on that on operator section later.
+    from the above example, number is declared of type integer but it hasn't given any
+    value so it's value is undefined, f is declared of type float and has initialized
+    with value of 100.4784 so whenever you call f it will yield a value of 100.4784,d
+    is declared of type double and initialized with a value of 3983.4784 and so on.C++ uses
+    {} or assignment operator(=) to initialize a variable more on that on operator
+    section later.
 */
