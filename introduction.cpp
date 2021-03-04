@@ -24,7 +24,11 @@
     ->Division(/)
     ->Modulus(%)
     While Floating point values can have all the operations that Integer has except for the
-    Modulus(%).When addition(+) is used with string(Text e.g "hello") it has a different meaning,we call this overloading(one operator has more than one meaning),it means add another string at the end of the given string. e.g s = "hello";s+"please" s will have the value "helloplease".String values do not support subtraction,division,multiplication nor modulus.The same applies to the characters.
+    Modulus(%).When addition(+) is used with string(Text e.g "hello") it has a
+    different meaning,we call this overloading(one operator has more than one meaning),
+    it means add another string at the end of the given string. e.g s = "hello";s+"please"
+    s will have the value "helloplease".String values do not support subtraction,division,
+    multiplication nor modulus.The same applies to the characters.
 
     C++ Supports the following types:
     ----------------------------------
@@ -46,7 +50,8 @@
 
     Type Identifier:
     ---------------
-    In C++ every type needs a name inorder to be used in the C++ program,the process of giving a type a name is known as declaration,the name of the type is what known as identifier.
+    In C++ every type needs a name inorder to be used in the C++ program,the process of
+    giving a type a name is known as declaration,the name of the type is what known as identifier.
     Example:
     int number; here int is a type denoting Integer type and number is an identifier.Now Whenever C++ compiler sees the word number it knows that it is of type integer.
 
