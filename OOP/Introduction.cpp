@@ -97,7 +97,7 @@
     -->By using Arrow operator(->)
     -->By using dot operator(.)
 
-    Using Arrow Operator:
+    Using Arrow(->) Operator:
     --------------------
     The arrow operator is used to access class members only when the class object
     is a pointer to the class.
@@ -118,6 +118,82 @@
     now:
     p_cat->say_mew(); //accessing say_mew() member function.
 
+    Using Dot(.) Operator:
+    ---------------------
+    if you don't define a pointer to the class,then use the dot operator
+    to access the class members.
+
+    example:
+
+    from the Cat class above if we want to access say_mew() member function using dot operator
+    we first create an object of the class as follow.
+
+    Cat cat{};
+
+    Now:
+
+    cat.say_mew();//accessing say_mew() member function
+
+    Constructor and Arguments:
+    -------------------------
+    Just like any other function in C++,a constructor can have an arguments,these arguments
+    can be default or non default arguments.
+
+    example:
+    ------
+    class Person{
+
+        public:
+        //constructor with non default arguments
+        Person(string name,unsigned int age){
+
+        }
+    };
+
+    class Person{
+
+        public:
+        constructor with default arguments
+        Person(string name="Chanoga",unsigned int age=27)
+    };
+
+    How to initialize member variables with Constructor:
+    ---------------------------------------------------
+    In C++ you can either initialize the member variables in the body of constructor
+    or in the head of  constructor.
+
+    example:
+    initilize member variables within body of constructor
+    class Person{
+
+        public:
+        Person(string n,unsigned int ag){
+            name = n;
+            age = ag;
+        }
+
+        private:
+        string name;
+        unsigned int age;
+    };
+
+    initilize member variables on the constructor head
+
+    class Person{
+        public:
+        Person(string n,unsigned int ag) : name(n),age(ag){
+
+        }
+    };
+
+    Using this Keyword:
+    ------------------
+    soon
+
+    Default constructor and Constructor Overloading.
+    ------------------------------------------------
+    soon
+
     DemoOne:
     the demo one in the code below shows how to declare a class,constructor,destructor and member
     functions,what private,public and protected means in C++.
@@ -126,6 +202,7 @@
 #include<iostream>
 using namespace std;
 
+//DemoOne
 class Dog{
     //public members
     public:
