@@ -188,11 +188,26 @@
 
     Using this Keyword:
     ------------------
-    soon
+   comming soon
 
     Default constructor and Constructor Overloading.
     ------------------------------------------------
-    soon
+    comming soon
+
+    Explicity keyword:
+    -----------------
+    comming soon
+
+    Scope Resolution(::) Operator:
+    comming soon.
+
+    Static Member functions:
+    -----------------------
+    comming soon
+    
+    Constant Objects:
+    -----------------
+    comming soon
 
     DemoOne:
     the demo one in the code below shows how to declare a class,constructor,destructor and member
@@ -218,6 +233,10 @@ class Dog{
 
     void print_number(int number){
         cout<<"Number is "<<number<<endl<<endl;
+    }
+
+    static void say(){
+        cout<<"Said"<<endl<<endl;
     }
 
     //destructor:
@@ -248,6 +267,7 @@ int main(void){
 
     //scooby.s; error, s is private cannot be accessed from here
     //scooby.ps; error, ps is private cannot be accessed from here
+    Dog::say();
 
     return 0;
 }

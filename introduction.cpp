@@ -118,6 +118,123 @@
 
     Characters:
     -----------
+    There are many character sets and character set encoding in use.C++ provides a variety
+    of character types that reflect that.
+
+    The following is character types supported by the C++ language:
+
+    -->char : This is a default character type for program text and is usually 8bit(1 byte) long.
+
+    -->signed char: like char but this type of character is guranteed to hold a negative and positive value
+    as well(range: -127 to +127) Why not -128 to +127 as one might expect...?,well C++ standard leaves open
+    the possibility of one's complement hardware and that eliminate one value.
+
+    -->unsigned char: like char type but this type cannot hold a negative value only positive(range: 0 to 256)
+
+    -->wchar_t: This is implementation defined and used to hold large character sets of large character
+    set unicodes.
+
+    -->char16_t: holds a 16bit character set(UTF-16)
+
+    --char32_t: Holds a 32 bit character set.
+
+    Note:
+    Each character has an integer value in the character set used by the implementation
+    example:
+    'b' = 98 in the ASCII character set.
+
+    Also character types are integral types,this means we can perform arithmetic and
+    bitwise operations on characters.
+
+    what type of character to use....?
+    ---------------------------------
+    Well for the plain char the answer is unclear,it's implementation defined whether a 
+    plain character is considered signed or unsigned.This behaviour can lead to nasty
+    supprises and implementation depencies.
+
+    example:
+    what will be the result on i in this example ?
+    char c = 255;
+    int i = c;
+
+    Unfortunatily the answer is unclear/undefined on a machine where char is signed the result is -1 
+    while on the machine where char is unsigned it is 255. some compiler might gives a warning 
+    on this type of conversion but C++ does not offer a general mechanism to detect this kind of problem.
+    The solution is to avoid using plain char and use either signed or unsigned char,unfortunately some
+    standard library  functions such as strcmp() takes plain chars only.
+
+    Also you cannot mix pointers to different characters.
+
+    example:
+
+    char *pc;
+    unsigned char *pus;
+    pc = pus; //error: no pointer conversion
+
+    same for all other characters.
+    but the variables of all char types can freely be assigned to one another,though assign a 
+    too large value to variable of signed char is still undefined.
+
+    character literal:
+    ------------------
+    Is a single value character enclosed in a single quote such as 'a','A','C','0','1' etc.
+    the type of character literal is plain char.
+    
+
+    Integers:
+    --------
+    Just like char integer types comes in three forms which are:
+
+    -->Plain integer
+    -->Signed integers and
+    -->Unsigned integers
+
+    Also integer types come in four sizes which are:
+
+    -->short int
+    -->plain int
+    -->long int and
+    -->long long int
+
+    those sizes can be abbreviated as:
+
+    -->short
+    -->int
+    -->long
+    -->long long
+
+    Unlike plain char plain integer types are signed by default,the size of integer types in memory
+    is implementation dependent but it always a short to have value that is less than integer and
+    integer values are considered to be small that long int which also must be small than long long int.
+
+    Integer Literals:
+    ----------------
+    Integer literal can be on one of the following fortmat:
+
+    -->Decimal(base 10)
+    -->Octal(base 8,usually starts with 0 e.g 027) and
+    -->Hexa decimal(base 16,usually starts with 0x)
+
+    Folating point values:
+    ---------------------
+    Floating point values represent floating point numbers,Floating point value is an approximation
+    of a real number in a fixed area of memory.
+
+    Floating point types:
+    --------------------
+    There are three floating point types which are:
+
+    -->float(single precision)
+    -->double(double precision)
+    -->long double(extended precision)
+
+
+    void type:
+    ---------
+    void type are used to denote that a function (see  function in FUNCTIONS section) are not
+    intended to return anything.It can also used as part of more complex type,their is no object 
+    of type void(see OOP for more details on objects).
+    
 
     Type Identifier:
     ---------------
@@ -151,7 +268,16 @@
 using namespace std;
 int main(void){
 
-    bool b{2};
-    cout<<"Boolean: "<<b<<endl<<endl;
+   // for(char c; cin>>c;) cout<<c<<" = "<<int{c}<<" Keyboard key"<<"\t";
+
+   char c = U'h';//char32_t
+   char a = u'A';//char16_t
+
+   wchar_t t = L'w';
+
+   cout<<c<<int{c}<<endl;
+   cout<<a<<int{a}<<endl;
+   cout<<t<<int{t}<<endl;
+
     return 0;
 }
