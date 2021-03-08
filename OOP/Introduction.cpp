@@ -349,7 +349,9 @@ void D::say_hi(){
 
     if you try:
     StaticDemo d{}; then d.say_hi(); it works as static members can be accessed
-    by any class objects.
+    by any class objects.The life cycle of any static member is depends on the life
+    cycle of the program,they still exist as long as the program runs.
+    
 
 
     Constant Objects:
@@ -416,7 +418,7 @@ int main(void){
     //scooby.ps; error, ps is private cannot be accessed from here
     Dog s{};
     s.say();//fine accessing static member of a class using class object.
-    
+
 
     return 0;
 }
