@@ -236,6 +236,10 @@
     of type void(see OOP for more details on objects).
     
 
+    Scope of a Variable:
+    --------------------
+    //comming soon
+
     Type Identifier:
     ---------------
     In C++ every type needs a name inorder to be used in the C++ program,the process of
@@ -245,7 +249,7 @@
 
     Type Declaration:
     -----------------
-    C++ programmer must know in advance what types his/her program is going to use and what operations are supported with that type.
+    C++ programmer must know in advance what types a program is going to use and what operations are supported with that type.
 
     Example:
     int number;
@@ -262,6 +266,42 @@
     is declared of type double and initialized with a value of 3983.4784 and so on.C++ uses
     {} or assignment operator(=) to initialize a variable more on that on operator
     section later.
+
+    using decltype():
+    ---------------
+    you can declare a variable using type of another variable in C++ using the special function called decltype().
+
+    example:
+    int x{2};
+    to declare another variable of type integer(same type as x) you can declare it as decltype(x) y;
+    here y is declared as a variable of whataver type x is,which is in this case integer.
+
+    using auto:
+    ----------
+    The auto keyword is used to declare a variable/determine the type of the variable by considering the
+    value given to that variable.
+
+    example:
+
+    auto x{100}; in this case C++ compiler will declare x as of type integer
+    int y{300};
+    auto z = y; or auto z{y}; declare z to be a variable of whatever type that y is.
+    
+
+    Initialization:
+    ---------------
+    a variable can be initialize,that is it's value is given at it's declaration in one of the following:
+
+    -->int x{100}; assign 100 to the variable named x of type integer
+
+    -->int y = {200}; same as above
+
+    -->int z = 300; same thing
+
+    -->int k(400); same thing.
+
+    more preffered way to initialize a variable is the first one used to initialize variable x(list initialization).
+
 */
 #include<iostream>
 #include<climits>
@@ -278,6 +318,10 @@ int main(void){
    cout<<c<<int{c}<<endl;
    cout<<a<<int{a}<<endl;
    cout<<t<<int{t}<<endl;
+
+   int x{1000};
+   decltype(x)y;
+   auto z{y};
 
     return 0;
 }
