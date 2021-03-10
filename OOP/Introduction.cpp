@@ -351,8 +351,74 @@ void D::say_hi(){
     StaticDemo d{}; then d.say_hi(); it works as static members can be accessed
     by any class objects.The life cycle of any static member is depends on the life
     cycle of the program,they still exist as long as the program runs.
-    
 
+    Explicitly Calling Destructor:
+    ------------------------------
+    Sometimes you dont want the destructor for your class to be called implicitly,C++ offers
+    a mechanism to handle this,and it can be done in one of the following methods:
+
+    -->Using =delete
+
+    -->using private
+
+    Using =delete:
+    --------------
+    if you declare the destructor followed by =delete,then that destructor will not be
+    called automatically,This means you will have to allocate memory for your object during
+    object creation.
+
+    Example:
+
+    class A{
+
+        public:
+        A(){
+
+        }
+        void destroyer(){
+            this-> ~A();//this function calls destructor,it is the one that is responsible for destroying object
+        }
+
+        destructor ~A will not be able to be invoked automatically
+        ~A() = delete{
+
+        }
+    };
+
+    void f(){
+        A a; error: function "A::~A() noexcept" (declared at line 19) cannot be referenced -- it is a deleted functionC/C++(1776
+        A *a{new A}; fine we have manually allocate memory for our object
+        a->destroyer();//now we are releasing memory
+    }
+
+    Using Private:
+    ------------
+    From the Above example,instead of using =delete we can just declare the Destructor in the
+    private section of the class and it will behave the same as it would have declared with delete.
+
+    example:
+
+    class A{
+        public:
+        A(){
+
+        }
+        void destroyer(){
+            this -> ~A();
+        }
+
+        private:
+        ~A(){
+
+        }
+    };
+
+    void f(){
+        A a; //same error
+        A *a{new A}; //ok
+
+        a->destroyer(); releasing memory
+    }
 
     Constant Objects:
     -----------------
